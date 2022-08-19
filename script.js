@@ -4,6 +4,11 @@ const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('message-input')
 
 const name = prompt('What is your name?')
+
+# basically script declares and handle all menthods to be used 
+# they process methods upon receiving the signals coming from server 
+
+
 appendMessage('You joined')
 socket.emit('new-user', name)
 
