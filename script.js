@@ -3,14 +3,16 @@ const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('message-input')
 
+
+// this will first open up, asking to grab your name 
 const name = prompt('What is your name?')
 
 # basically script declares and handle all menthods to be used 
 # they process methods upon receiving the signals coming from server 
 
-
 appendMessage('You joined')
-socket.emit('new-user', name)
+socket.emit('new-user', name)  // then, this will send out the "new-user" signal with his name, server side will accept it and process it
+
 
 socket.on('chat-message', data => {
   appendMessage(`${data.name}: ${data.message}`)
