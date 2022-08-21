@@ -10,6 +10,7 @@ io.on('connection', socket => {
   # server socket.on accepts it, and drop "name"
   # then emit out "user-connected" signal, which script again process it, and append the message
   
+  // accept "new-user" signal from script.js and then broadcast is, to send signal to everyone else but YOU - sender 
   socket.on('new-user', name => {
     users[socket.id] = name
     socket.broadcast.emit('user-connected', name)
